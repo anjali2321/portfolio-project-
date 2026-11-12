@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Subtle engineering grid background for portfolio mode */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Clean, ATS-safe single-page PDF export styling */
+@media print {
+  @page {
+    size: A4;
+    margin: 0.5in 0.55in;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+}
