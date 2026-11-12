@@ -46,10 +46,10 @@ export default function AtsResumeView({
           <h1 className="text-xl font-bold uppercase tracking-wide text-slate-950 sm:text-2xl">
             {profile.name}
           </h1>
-          <p className="mt-1 text-xs font-semibold text-slate-800 sm:text-sm">
+          <p className="mt-1 text-xs font-semibold text-slate-800 sm:text-sm print:mt-0.5 print:text-[11px]">
             {profile.tagline}
           </p>
-          <p className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11px] text-slate-700 sm:text-xs">
+          <p className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11px] text-slate-700 sm:text-xs print:mt-0.5 print:text-[9.5px]">
             <span>{profile.location}</span>
             <span aria-hidden="true">|</span>
             <a href={`tel:${profile.phone}`} className="hover:underline">
@@ -65,7 +65,7 @@ export default function AtsResumeView({
               {profile.email}
             </a>
           </p>
-          <p className="mt-1 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11px] text-slate-700 sm:text-xs">
+          <p className="mt-1 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11px] text-slate-700 sm:text-xs print:mt-0.5 print:text-[9.5px]">
             <span>
               LinkedIn:{" "}
               <a
@@ -97,7 +97,7 @@ export default function AtsResumeView({
           <h2 className="border-b border-slate-400 pb-0.5 text-xs font-bold uppercase tracking-wider text-slate-950">
             Professional Summary
           </h2>
-          <p className="mt-1.5 text-[11px] leading-relaxed text-slate-800 sm:text-xs">
+          <p className="mt-1.5 text-[11px] leading-relaxed text-slate-800 sm:text-xs print:mt-1 print:text-[9.8px] print:leading-[1.28]">
             {profile.summary}
           </p>
         </section>
@@ -107,7 +107,7 @@ export default function AtsResumeView({
           <h2 className="border-b border-slate-400 pb-0.5 text-xs font-bold uppercase tracking-wider text-slate-950">
             Technical Skills
           </h2>
-          <div className="mt-1.5 space-y-1 text-[11px] leading-snug text-slate-800 sm:text-xs">
+          <div className="mt-1.5 space-y-1 text-[11px] leading-snug text-slate-800 sm:text-xs print:mt-1 print:space-y-0.5 print:text-[9.8px] print:leading-[1.25]">
             {skillGroups.map((group) => (
               <p key={group.category}>
                 <strong className="font-semibold text-slate-950">
@@ -124,23 +124,23 @@ export default function AtsResumeView({
           <h2 className="border-b border-slate-400 pb-0.5 text-xs font-bold uppercase tracking-wider text-slate-950">
             Professional Experience
           </h2>
-          <div className="mt-1.5 space-y-2.5">
+          <div className="mt-1.5 space-y-2.5 print:mt-1 print:space-y-1.5">
             {experience.map((item) => (
               <div key={`${item.role}-${item.organization}`}>
-                <div className="flex flex-col gap-0.5 text-[11px] sm:flex-row sm:items-baseline sm:justify-between sm:text-xs">
+                <div className="flex flex-col gap-0.5 text-[11px] sm:flex-row sm:items-baseline sm:justify-between sm:text-xs print:flex-row print:items-baseline print:justify-between print:text-[10px]">
                   <p className="font-bold text-slate-950">
                     {item.role} | {item.organization}
                   </p>
                   <span className="font-medium text-slate-700">{item.period}</span>
                 </div>
 
-                <div className="mt-1.5 space-y-2">
+                <div className="mt-1.5 space-y-2 print:mt-1 print:space-y-1">
                   {item.projects.map((proj) => (
                     <div key={proj.name}>
-                      <p className="text-[11px] font-bold text-slate-900 sm:text-xs">
+                      <p className="text-[11px] font-bold text-slate-900 sm:text-xs print:text-[9.8px]">
                         {proj.name}
                       </p>
-                      <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-[11px] leading-snug text-slate-800 sm:pl-5 sm:text-xs">
+                      <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-[11px] leading-snug text-slate-800 sm:pl-5 sm:text-xs print:space-y-0 print:pl-4 print:text-[9.6px] print:leading-[1.26]">
                         {proj.highlights.map((bullet) => (
                           <li key={bullet}>{bullet}</li>
                         ))}
@@ -158,10 +158,10 @@ export default function AtsResumeView({
           <h2 className="border-b border-slate-400 pb-0.5 text-xs font-bold uppercase tracking-wider text-slate-950">
             Projects
           </h2>
-          <div className="mt-1.5 space-y-2">
+          <div className="mt-1.5 space-y-2 print:mt-1 print:space-y-1">
             {projects.map((project) => (
               <div key={project.id}>
-                <p className="break-words text-[11px] font-bold text-slate-950 sm:text-xs">
+                <p className="break-words text-[11px] font-bold text-slate-950 sm:text-xs print:text-[9.8px]">
                   {project.title}{" "}
                   <span className="font-normal text-slate-700">
                     | {project.subtitle}
@@ -181,12 +181,12 @@ export default function AtsResumeView({
                     </>
                   )}
                 </p>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-[11px] leading-snug text-slate-800 sm:pl-5 sm:text-xs">
+                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 text-[11px] leading-snug text-slate-800 sm:pl-5 sm:text-xs print:space-y-0 print:pl-4 print:text-[9.6px] print:leading-[1.25]">
                   {project.highlights.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
-                <p className="mt-0.5 pl-4 text-[11px] text-slate-800 sm:pl-5 sm:text-xs">
+                <p className="mt-0.5 pl-4 text-[11px] text-slate-800 sm:pl-5 sm:text-xs print:mt-0 print:pl-4 print:text-[9.5px] print:leading-[1.25]">
                   <strong className="font-semibold">Technologies:</strong>{" "}
                   {project.techStack.join(", ")}.
                 </p>
@@ -200,11 +200,11 @@ export default function AtsResumeView({
           <h2 className="border-b border-slate-400 pb-0.5 text-xs font-bold uppercase tracking-wider text-slate-950">
             Education
           </h2>
-          <div className="mt-1.5 space-y-1.5">
+          <div className="mt-1.5 space-y-1.5 print:mt-1 print:space-y-1">
             {education.map((edu) => (
               <div
                 key={`${edu.degree}-${edu.period}`}
-                className="flex flex-col gap-0.5 text-[11px] sm:flex-row sm:items-baseline sm:justify-between sm:text-xs"
+                className="flex flex-col gap-0.5 text-[11px] sm:flex-row sm:items-baseline sm:justify-between sm:text-xs print:flex-row print:items-baseline print:justify-between print:text-[9.6px] print:leading-[1.22]"
               >
                 <div className="min-w-0">
                   <p className="font-bold text-slate-950">{edu.degree}</p>
@@ -223,7 +223,7 @@ export default function AtsResumeView({
           <h2 className="border-b border-slate-400 pb-0.5 text-xs font-bold uppercase tracking-wider text-slate-950">
             Certifications
           </h2>
-          <ul className="mt-1 list-disc space-y-0.5 pl-4 text-[11px] text-slate-800 sm:pl-5 sm:text-xs">
+          <ul className="mt-1 grid grid-cols-1 gap-0.5 pl-4 text-[11px] text-slate-800 list-disc sm:pl-5 sm:text-xs print:mt-1 print:grid-cols-2 print:gap-x-4 print:gap-y-0 print:pl-4 print:text-[9.5px] print:leading-[1.25]">
             {certifications.map((cert) => (
               <li key={`${cert.title}-${cert.year}`}>
                 {cert.title}

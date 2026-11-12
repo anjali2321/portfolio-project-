@@ -22,16 +22,18 @@
 }
 
 /* Clean, ATS-safe single-page PDF export styling */
-@media print {
-  @page {
-    size: A4;
-    margin: 0.5in 0.55in;
-  }
+@page {
+  size: A4;
+  margin: 0;
+}
 
+@media print {
   html,
   body {
     background: #ffffff !important;
     color: #0f172a !important;
+    margin: 0 !important;
+    padding: 0 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -43,8 +45,32 @@
   .print-sheet {
     box-shadow: none !important;
     border: none !important;
+    border-radius: 0 !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0.28in 0.42in !important;
     max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 9.8px !important;
+    line-height: 1.26 !important;
+  }
+
+  .print-sheet header {
+    padding-bottom: 6px !important;
+  }
+
+  .print-sheet h1 {
+    font-size: 18px !important;
+    line-height: 1.15 !important;
+  }
+
+  .print-sheet section {
+    margin-top: 7px !important;
+  }
+
+  .print-sheet h2 {
+    font-size: 10.5px !important;
+    padding-bottom: 2px !important;
+    margin-bottom: 0 !important;
   }
 }
